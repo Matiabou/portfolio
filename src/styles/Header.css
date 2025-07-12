@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Mont;
+    src: url(../assets/fonts/Mont-ExtraLightDEMO.otf);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--main-color-super-light);
+    padding: 0 32px;
+    height: 70px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 16px;
+    width: 20%;
+}
+
+.lang-btn, .theme-btn {
+    background: none;
+    border: none;
+    color: var(--main-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+.lang-btn:hover, .theme-btn:hover {
+    background: var(--main-color-super-light-blur);
+}

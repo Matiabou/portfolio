@@ -1,9 +1,4 @@
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 5px;
-}
+
 
 nav {
     padding: 10px;
@@ -11,6 +6,7 @@ nav {
     display: flex;
     background-color: transparent;
     border-radius: 50px;
+    margin: 5px;
 }
 
 a {
@@ -22,7 +18,7 @@ a {
     font-size: medium;
     padding: 8px 15px;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 a:hover {

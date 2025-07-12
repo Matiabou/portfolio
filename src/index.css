@@ -5,3 +5,7 @@
   --main-color-super-light-blur: #69756552;
   --secondary-color: #ECDFCC;
 }
+
+body {
+  margin: 0;
+}
