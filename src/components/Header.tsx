@@ -1,7 +1,7 @@
 import { Navbar } from './Navbar'
 import '../styles/Header.css'
 import { useState } from 'react'
-import Logo from './Icons';
+import { Logo } from './Icons';
 
 export function Header() {
     const [lang, setLang] = useState('ES');

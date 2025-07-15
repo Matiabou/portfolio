@@ -1,9 +1,25 @@
 :root {
-  --main-color: #181C14;
-  --main-color-light: #464740;
-  --main-color-super-light: #697565;
-  --main-color-super-light-blur: #69756552;
-  --secondary-color: #ECDFCC;
+  --background-color: #090c1a;
+  --background-color-light: #101630;
+  --background-color-super-light: #a1aee47a;
+  --background-color-super-light-blur: #757c9e8a;
+  --background-color-blur: #c5c5c515;
+  --main-color: #c2c6da;
+  --secondary-color: #faa628;
+  --secondary-color-light: #fdd629 ;
+  --main-font: Mont, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@font-face {
+    font-family: Mont;
+    src: url(../assets/fonts/Mont-ExtraLightDEMO.woff2) format('woff2');
+}
+
+html {
+  font-size: 16px;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-weight: 500;
 }
 
 body {

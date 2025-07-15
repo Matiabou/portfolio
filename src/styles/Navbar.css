@@ -1,6 +1,6 @@
 
 
-nav {
+.navbar-container {
     padding: 10px;
     padding-inline: 30px;
     display: flex;
@@ -9,10 +9,11 @@ nav {
     margin: 5px;
 }
 
-a {
+.navbar-element {
+    text-decoration: none;
     border: 0;
     background-color: transparent;
-    color: white;
+    color: inherit;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     font-size: medium;
@@ -21,9 +22,9 @@ a {
     border-radius: 3px;
 }
 
-a:hover {
+.navbar-element:hover {
     cursor: pointer;
     transition-duration: 300ms;
-    background-color: var(--main-color-super-light-blur);
+    background-color: var(--background-color-blur);
     
 }
