@@ -1,25 +1,42 @@
-import "../styles/Inicio.css";
-import { LinkedinLogo, MailLogo } from "./Icons";
+import { FaChevronDown } from "react-icons/fa6";
 
-export function Inicio() {
-    return (
-        <>
-            <section>
-                <div>
-                    <h2>Hey, soy Matías</h2>
-                    <h1 data-text="Desarrollador Frontend">Desarrollador Frontend</h1>
-                    <h2>Creando páginas web únicas</h2>
-                    <div className="social-icons">
-                        <a className="Logo" href="https://www.linkedin.com/in/mat%C3%ADas-aboudara/" target="_blank" rel="noopener noreferrer">
-                            <LinkedinLogo width={32} height={32}/>  
-                        </a>
-                        <a className="Logo" href="mailto:matiasaboudara@gmail.com" target="_blank" rel="noopener noreferrer">
-                            <MailLogo width={32} height={32}/>
-                        </a>
-                    </div>    
-                </div>
-                <img src="/src/assets/img/Me.webp" alt="Yo" className="profile-image" />
-            </section>
-        </>
-    );
-}
+export const HeroSection: React.FC<{ scrollToSection: (sectionId: string) => void }> = ({ scrollToSection }) => (
+  <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-pink-600/20 to-blue-600/20"></div>
+    <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+      <div className="mb-8">
+        <img
+          src="src/assets/img/Me.webp"
+          alt="Matías Aboudara"
+          className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover mx-auto border-4 border-purple-400 shadow-lg">
+        </img>
+      </div>
+      <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+        Matías Aboudara
+      </h1>
+      <p className="text-xl md:text-2xl text-gray-300 mb-8">
+        Desarrollador Frontend
+      </p>
+      <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+        Creando experiencias web modernas y atractivas con las últimas tecnologías
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          onClick={() => scrollToSection('proyectos')}
+          className="cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 hover:scale-110 px-8 py-3 rounded-lg transition-all duration-200 font-semibold"
+        >
+          Ver Proyectos
+        </button>
+        <button
+          onClick={() => scrollToSection('contacto')}
+          className="cursor-pointer border border-purple-400 text-purple-400 hover:bg-purple-400 hover:scale-110 hover:text-white px-8 py-3 rounded-lg transition-all duration-200 font-semibold"
+        >
+          Contacto
+        </button>
+      </div>
+    </div>
+    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <FaChevronDown size={32} className="text-purple-400" />
+    </div>
+  </section>
+);
