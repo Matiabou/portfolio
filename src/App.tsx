@@ -15,9 +15,47 @@ const App = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Detectar sección activa según el scroll
+      const sections = ['inicio', 'sobre-mi', 'proyectos', 'certificaciones', 'contacto'];
+      const viewportHeight = window.innerHeight;
+      let maxVisibleSection = null;
+      let maxVisibleArea = 0;
+
+      sections.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Calcular el área visible de la sección en el viewport
+          const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+          const visibleArea = Math.max(0, visibleHeight);
+
+          if (visibleArea > maxVisibleArea) {
+            maxVisibleArea = visibleArea;
+            maxVisibleSection = id;
+          }
+        }
+      });
+
+      if (maxVisibleSection) {
+        setActiveSection(maxVisibleSection);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Throttle el evento de scroll para mejor rendimiento
+    let ticking = false;
+    const scrollListener = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', scrollListener, { passive: true });
+    return () => window.removeEventListener('scroll', scrollListener);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -29,7 +67,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+    <div className="min-h-screen bg- text-white">
       <Navigation
         activeSection={activeSection}
         isScrolled={isScrolled}

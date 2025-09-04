@@ -2,7 +2,7 @@ import { FaChevronDown } from "react-icons/fa6";
 
 export const HeroSection: React.FC<{ scrollToSection: (sectionId: string) => void }> = ({ scrollToSection }) => (
   <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-pink-600/20 to-blue-600/20"></div>
+    <div className="absolute inset-0 bg-gradient-to-br "></div>
     <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
       <div className="mb-8">
         <img
@@ -38,5 +38,7 @@ export const HeroSection: React.FC<{ scrollToSection: (sectionId: string) => voi
     <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
       <FaChevronDown size={32} className="text-purple-400" />
     </div>
+    {/* Fade inferior para suavizar transición de fondo */}
+   
   </section>
 );
